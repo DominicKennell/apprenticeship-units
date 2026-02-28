@@ -82,7 +82,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding: 7rem 4rem 4rem; /* extra top padding for fixed nav */
+      padding: 7rem 4rem 4rem;
       position: relative;
       overflow: hidden;
     }
@@ -269,9 +269,7 @@
     }
 
     /* ── PROBLEM ── */
-    .problem {
-      background: var(--white);
-    }
+    .problem { background: var(--white); }
 
     .problem-grid {
       display: grid;
@@ -346,7 +344,7 @@
     /* ── SERVICES ── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-top: 3.5rem;
     }
@@ -525,15 +523,16 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="logo">Levy <span>Unlocked</span></div>
-    <div class="nav-links">
-      <a href="#problem">Why now</a>
-      <a href="#services">Services</a>
-      <a href="#who">Who we help</a>
-      <a href="#contact" class="nav-cta">Book a call</a>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">Levy <span>Unlocked</span></div>
+  <div class="nav-links">
+    <a href="#problem">Why now</a>
+    <a href="#services">Services</a>
+    <a href="#stacked">Stacked units</a>
+    <a href="#who">Who we help</a>
+    <a href="#contact" class="nav-cta">Book a call</a>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="hero">
@@ -544,6 +543,7 @@
         Levy Unlocked is a consultancy focused exclusively on apprenticeship units — the new short, flexible training courses funded through the Growth &amp; Skills Levy. We help businesses access every unit across the growing catalogue, from day one.
       </p>
       <div class="hero-actions">
+        <a href="#stacked">Stacked units</a>
         <a href="#contact" class="btn-primary">Get Your 2026 Readiness Audit</a>
         <a href="#services" class="btn-ghost">See how it works →</a>
       </div>
@@ -593,7 +593,7 @@
         <h3>Apprenticeship Units: Key Facts</h3>
         <div class="timeline-item">
           <span class="timeline-date">Career</span>
-          <span class="timeline-text">Units carry formal credits that can contribute toward a full Level 4-7 Standard later — long-term value for your employees</span>
+          <span class="timeline-text">Units are being designed to carry formal credit that can contribute toward a full Level 4–7 Standard in future — long-term value for your employees</span>
         </div>
         <div class="timeline-item">
           <span class="timeline-date">What</span>
@@ -630,9 +630,15 @@
     </div>
     <div class="services-grid reveal">
       <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h3>Startup & Readiness</h3>
+        <p>We assess your workforce and skills gaps, audit your levy position, map the right future apprenticeship units to your roles, and give you a clear plan so you can launch your first units the moment they go live</p>
+        <div class="price">→ £1,500 one-off startup fee</div>
+      </div>
+      <div class="service-card">
         <div class="service-icon">🔍</div>
         <h3>Initial Cohort Setup</h3>
-        <p>We assess your workforce needs, identify the right units, find the right provider and handle the full setup for your first cohort of up to 4 apprentices.</p>
+        <p>When units launch we handle everything — provider selection, levy funding alignment and full setup for your first cohort of up to 4 apprentices.</p>
         <div class="price">→ £1,500 per cohort (up to 4 apprentices)</div>
       </div>
       <div class="service-card">
@@ -646,6 +652,49 @@
         <h3>Quarterly Units Review</h3>
         <p>New units are approved continuously. Every quarter we review the latest units, assess what's relevant to your business, and brief you on your next opportunities.</p>
         <div class="price">→ £500 per quarter</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACKED UNITS -->
+  <section id="stacked" style="background: var(--white);">
+    <div class="reveal">
+      <div class="section-label">Stacked Units</div>
+      <h2>Not just a course.<br/>A development pathway.</h2>
+      <p class="section-intro">
+        We design stacked unit journeys — structured sequences where each unit builds on the last, creating continuous development, compounding skills and ongoing levy utilisation.
+      </p>
+    </div>
+    <div class="problem-grid reveal">
+      <ul class="problem-list">
+        <li>Each unit builds directly on the previous one — employees develop coherent, deepening expertise rather than disconnected one-off training</li>
+        <li>Units are designed to carry formal credit that can contribute toward full Level 4–7 learning later on, as frameworks develop</li>
+        <li>Stacking keeps levy funds working continuously rather than in isolated bursts — maximising your investment throughout the year</li>
+        <li>Different teams get tailored pathways — a data team stacks differently to a marketing team or an engineering team</li>
+        <li>Employees can see a clear progression journey ahead of them — a powerful tool for motivation and retention</li>
+      </ul>
+      <div class="change-timeline">
+        <h3>Example Pathways</h3>
+        <div class="timeline-item">
+          <span class="timeline-date">Data</span>
+          <span class="timeline-text">Excel Fundamentals → Power BI → Data Analysis → AI for Data</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">Digital</span>
+          <span class="timeline-text">Digital Marketing → SEO & Analytics → AI Marketing Tools</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">Engineering</span>
+          <span class="timeline-text">CAD Fundamentals → Digital Manufacturing → AI in Engineering</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">AI</span>
+          <span class="timeline-text">AI Awareness → AI Tools in Practice → Advanced AI Implementation</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">Bespoke</span>
+          <span class="timeline-text">We design custom pathways tailored to your team's specific skills gaps and business goals</span>
+        </div>
       </div>
     </div>
   </section>
@@ -667,18 +716,18 @@
           <li>Use existing levy funds with no extra budget</li>
           <li>Access units across a growing range of sectors</li>
           <li>No multi-year apprenticeship commitment required</li>
-          <li>£1,500 first cohort, £500 per additional apprentice</li>
+          <li>Units are designed to carry formal credit that can contribute toward full Level 4–7 learning later on, as frameworks develop</li>
         </ul>
       </div>
       <div class="who-card">
         <h3>SMEs</h3>
-        <p>You don't pay the levy but you can still access apprenticeship unit funding through levy transfers from larger employers. We find the funding and handle everything.</p>
+        <p>You don't pay the levy but you can still access levy-funded apprenticeship training in the same areas units will cover (AI, digital, engineering) through transfers from larger employers. We find the funding and handle everything.</p>
         <ul>
-          <li>Access government-funded units via levy transfer</li>
+          <li>Access government-funded training via levy transfer, aligned to future apprenticeship units</li>
           <li>100% training cost coverage for staff under 25</li>
           <li>Train your team in the skills that matter most</li>
           <li>No levy contribution required</li>
-          <li>£1,500 first cohort, £500 per additional apprentice</li>
+          <li>We handle transfers and funding so you can focus on your business</li>
         </ul>
       </div>
     </div>
@@ -689,17 +738,14 @@
     <div class="cta-box reveal">
       <div class="section-label">Get Started</div>
       <h2>Be first to access<br/>apprenticeship units</h2>
-      <p>A free 30-minute conversation to explore how apprenticeship units could work for your business. No hard sell — just honest, specialist advice.</p>
-      <a href="mailto:levyunlocked@gmail.com?subject=2026%20Readiness%20Audit"
-         class="btn-primary"
-         style="display:inline-block; margin-bottom:1rem;">
+      <p>A free 30-minute call to map how apprenticeship units could work for your teams, what’s realistic for 2026, and where to start. No hard sell — just honest, specialist advice.</p>
+      <a href="mailto:levyunlocked@gmail.com" class="btn-primary" style="display:inline-block; margin-bottom:1rem;">
         Get Your 2026 Readiness Audit
       </a>
-      <p class="cta-note">Prefer to write first? Email us at <strong>levyunlocked@gmail.com</strong></p>
     </div>
   </section>
 
-  <!-- FOOTER -->
+   <!-- FOOTER -->
   <footer>
     <div class="logo">Levy <span style="color:var(--gold)">Unlocked</span></div>
     <div>Exclusively focused on apprenticeship units. Provider-neutral. Always.</div>
