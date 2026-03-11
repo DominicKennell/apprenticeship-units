@@ -454,14 +454,14 @@
     }
     .who-card ul li::before { content: '✓'; color: var(--gold); }
 
-    /* ── CTA ── */
+    /* ── CTA / FORM SECTION ── */
     .cta-section {
       background: var(--cream);
       text-align: center;
     }
 
     .cta-box {
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
       background: var(--white);
       border-radius: 20px;
@@ -470,10 +470,138 @@
       box-shadow: 0 8px 48px rgba(13,31,60,0.08);
     }
 
-    .cta-box h2 { margin-bottom: 1rem; }
-    .cta-box p { color: var(--muted); line-height: 1.7; margin-bottom: 2rem; font-size: 1rem; }
+    .cta-box h2 { margin-bottom: 0.6rem; }
+    .cta-box .cta-sub {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.2rem;
+      font-size: 1rem;
+    }
 
-    .cta-note { font-size: 0.78rem; color: var(--muted); }
+    /* ── FORM STYLES ── */
+    .levy-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(13,31,60,0.15);
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+      background: var(--white);
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230d1f3c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.4rem 0;
+    }
+    .form-divider::before,
+    .form-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(13,31,60,0.1);
+    }
+    .form-divider span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .btn-submit {
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 0.5rem;
+      width: 100%;
+      letter-spacing: 0.01em;
+    }
+    .btn-submit:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+    .btn-submit:active { transform: translateY(0); }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.2rem;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .form-success .success-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .form-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+    }
+    .form-success p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -517,22 +645,23 @@
       .urgency { padding: 1rem 1.5rem; text-align: center; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
       .cta-box { padding: 2.5rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-<nav>
-  <div class="logo">Levy <span>Unlocked</span></div>
-  <div class="nav-links">
-    <a href="#problem">Why now</a>
-    <a href="#services">Services</a>
-    <a href="#stacked">Stacked units</a>
-    <a href="#who">Who we help</a>
-    <a href="#contact" class="nav-cta">Book a call</a>
-  </div>
-</nav>
+  <nav>
+    <div class="logo">Levy <span>Unlocked</span></div>
+    <div class="nav-links">
+      <a href="#problem">Why now</a>
+      <a href="#services">Services</a>
+      <a href="#stacked">Stacked units</a>
+      <a href="#who">Who we help</a>
+      <a href="#contact" class="nav-cta">Free Levy Check</a>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <section class="hero">
@@ -543,8 +672,7 @@
         Levy Unlocked is a consultancy focused exclusively on apprenticeship units — the new short, flexible training courses funded through the Growth &amp; Skills Levy. We help businesses access every unit across the growing catalogue, from day one.
       </p>
       <div class="hero-actions">
-        <a href="#stacked">Stacked units</a>
-        <a href="#contact" class="btn-primary">Get Your 2026 Readiness Audit</a>
+        <a href="#contact" class="btn-primary">Get Your Free Levy Check</a>
         <a href="#services" class="btn-ghost">See how it works →</a>
       </div>
     </div>
@@ -631,7 +759,7 @@
     <div class="services-grid reveal">
       <div class="service-card">
         <div class="service-icon">🚀</div>
-        <h3>Startup & Readiness</h3>
+        <h3>Startup &amp; Readiness</h3>
         <p>We assess your workforce and skills gaps, audit your levy position, map the right future apprenticeship units to your roles, and give you a clear plan so you can launch your first units the moment they go live</p>
         <div class="price">→ £1,500 one-off startup fee</div>
       </div>
@@ -662,7 +790,7 @@
       <div class="section-label">Stacked Units</div>
       <h2>Not just a course.<br/>A development pathway.</h2>
       <p class="section-intro">
-        We design stacked unit journeys — structured sequences where each unit builds on the last, creating continuous development, compounding skills and ongoing levy utilisation. When we talk about “stacking”, we mean internal development pathways we create with you, not a Government-approved credit framework.
+        We design stacked unit journeys — structured sequences where each unit builds on the last, creating continuous development, compounding skills and ongoing levy utilisation. When we talk about "stacking", we mean internal development pathways we create with you, not a Government-approved credit framework.
       </p>
     </div>
     <div class="problem-grid reveal">
@@ -681,7 +809,7 @@
         </div>
         <div class="timeline-item">
           <span class="timeline-date">Digital</span>
-          <span class="timeline-text">Digital Marketing → SEO & Analytics → AI Marketing Tools</span>
+          <span class="timeline-text">Digital Marketing → SEO &amp; Analytics → AI Marketing Tools</span>
         </div>
         <div class="timeline-item">
           <span class="timeline-date">Engineering</span>
@@ -733,23 +861,169 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- SME REASSURANCE BANNER -->
+  <div class="urgency" style="background: var(--gold); color: var(--navy); font-size: 0.88rem;">
+    <div class="urgency-dot" style="background: var(--navy);"></div>
+    <strong>Don't pay the levy?</strong>&nbsp;You can still access fully government-funded training through a levy transfer — we handle everything. Fill in the form below to find out more.
+  </div>
+
+  <!-- CTA / FORM -->
   <section class="cta-section" id="contact">
     <div class="cta-box reveal">
-      <div class="section-label">Get Started</div>
-      <h2>Be first to access<br/>apprenticeship units</h2>
-      <p>A free 30-minute call to map how apprenticeship units could work for your teams, what’s realistic for 2026, and where to start. No hard sell — just honest, specialist advice.</p>
-      <a href="mailto:levyunlocked@gmail.com" class="btn-primary" style="display:inline-block; margin-bottom:1rem;">
-        Get Your 2026 Readiness Audit
-      </a>
+      <div class="section-label">Free Levy Check</div>
+      <h2>See whether apprenticeship units<br/>could benefit your team</h2>
+      <p class="cta-sub">Answer a few quick questions and Dom will be in touch with a personalised assessment of which units and funding routes are available to your business — no obligation, no jargon.</p>
+
+      <!-- Eligibility hint cards -->
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 2rem; text-align: left;">
+        <div style="background: var(--cream); border-radius: 8px; padding: 1rem 1.2rem; border-left: 3px solid var(--gold);">
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 600; margin-bottom: 0.3rem;">Levy Payers</div>
+          <div style="font-size: 0.85rem; color: var(--text); line-height: 1.5;">Use your existing contributions for the new April 2026 units — before they expire back to the Treasury.</div>
+        </div>
+        <div style="background: var(--cream); border-radius: 8px; padding: 1rem 1.2rem; border-left: 3px solid var(--navy);">
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); font-weight: 600; margin-bottom: 0.3rem;">SMEs</div>
+          <div style="font-size: 0.85rem; color: var(--text); line-height: 1.5;">Access government-funded training via levy transfer. 100% funded for eligible under-25s from April 2026.</div>
+        </div>
+      </div>
+
+      <!-- FORM — powered by Formspree. Sign up at formspree.io and replace YOUR_FORM_ID -->
+      <form
+        class="levy-form"
+        id="levyForm"
+        action="https://formspree.io/f/xdawgwgb"
+        method="POST"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Acme Ltd" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="payroll">Approximate Annual Payroll</label>
+            <select id="payroll" name="payroll" required>
+              <option value="" disabled selected>Select a range</option>
+              <option value="Under £500k">Under £500k</option>
+              <option value="£500k – £1m">£500k – £1m</option>
+              <option value="£1m – £3m">£1m – £3m</option>
+              <option value="£3m – £5m">£3m – £5m</option>
+              <option value="£5m – £10m">£5m – £10m</option>
+              <option value="Over £10m">Over £10m</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="employees">Number of Employees</label>
+            <select id="employees" name="employees" required>
+              <option value="" disabled selected>Select a range</option>
+              <option value="1–10">1 – 10</option>
+              <option value="11–50">11 – 50</option>
+              <option value="51–250">51 – 250</option>
+              <option value="250+">250+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sector">Primary Sector</label>
+          <select id="sector" name="sector" required>
+            <option value="" disabled selected>Select your sector</option>
+            <option value="Digital / Technology">Digital / Technology</option>
+            <option value="Engineering / Manufacturing">Engineering / Manufacturing</option>
+            <option value="AI / Data">AI / Data</option>
+            <option value="Construction">Construction</option>
+            <option value="Health & Social Care">Health &amp; Social Care</option>
+            <option value="Hospitality / Retail">Hospitality / Retail</option>
+            <option value="Professional Services">Professional Services</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="using">Currently using apprenticeship funding?</label>
+          <select id="using" name="currently_using_funding" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Yes — actively">Yes — actively</option>
+            <option value="Yes — but not fully">Yes — but not making the most of it</option>
+            <option value="No — never have">No — never have</option>
+            <option value="I don't pay the levy but I'm interested in transfers">I don't pay the levy but I'm interested in transfers</option>
+            <option value="Not sure">Not sure</option>
+          </select>
+        </div>
+
+        <div class="form-divider"><span>Your contact details</span></div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@acme.co.uk" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="07700 900000" />
+          </div>
+        </div>
+
+        <!-- Hidden fields -->
+        <input type="hidden" name="_subject" value="New Levy Check — Levy Unlocked" />
+
+        <button type="submit" class="btn-submit">Get My Free Levy Check →</button>
+        <p class="form-note">Takes under 1 minute · No obligation · Dom will be in touch within 1 business day</p>
+      </form>
+
+      <!-- SUCCESS MESSAGE -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h3>You're all set.</h3>
+        <p>Thanks for submitting your details. Dom will review your levy position and be in touch within one business day with a personalised assessment — whether you're a levy payer or looking to access funding through a transfer.</p>
+      </div>
     </div>
   </section>
 
-   <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="logo">Levy <span style="color:var(--gold)">Unlocked</span></div>
     <div>Exclusively focused on apprenticeship units. Provider-neutral. Always.</div>
     <div>© 2026 Levy Unlocked</div>
   </footer>
+
+  <script>
+    // Handle form submission with AJAX for smooth success state
+    const form = document.getElementById('levyForm');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          btn.textContent = 'Something went wrong — please try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — please try again';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
 </body>
 </html>
